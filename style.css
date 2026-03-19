@@ -8,12 +8,19 @@ body {
 }
 
 .navbar {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: solid black 1px;
     gap: 10px;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    height: 40px;
+    background-color: white;
+    z-index: 2;
 
 }
 
@@ -23,13 +30,13 @@ body {
 }
 
 .navbar__s2 {
-    padding: 20px;
+    padding: 15px;
     border: solid black 1px;
     border-radius: 30px;
     width: 60%;
     display: flex;
     gap: 10px;
-    height: 30px;
+    height: 10px;
     align-items: center;
 }
 
@@ -50,10 +57,42 @@ body {
 
 }
 
+.mylearning {
+    cursor: pointer;
+}
+
+.mylearning__popup {
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 1px rgb(137, 45, 225) solid;
+    border-radius: 15px;
+    height: 90px;
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 04px;
+    top: 40px;
+    right: 145px;
+    box-shadow: rgb(137, 45, 225) 0 4px 4px;
+    display: none;
+
+}
+
+.mylearning:hover {
+    .mylearning__popup {
+        display: block;
+        transition: 0.3s;
+    }
+
+
+}
+
+
 .categories {
     display: flex;
     gap: 15px;
-    padding: 10px;
+    padding: 0px;
     border-bottom: solid black 1px;
     justify-content: space-around;
 }
@@ -62,30 +101,63 @@ body {
     background-color: rgb(137, 45, 225);
     color: white;
     border: solid rgb(137, 45, 225) 1px;
-    border-radius: 30px;
-    padding: 10px;
+    border-radius: 25px;
+    padding: 05px;
 
 }
+
 
 .home--image {
     display: flex;
     justify-content: end;
     background-color: hsl(220, 27%, 98%);
     width: 100%;
-
-
+    position: relative;
+    z-index: 1;
 }
 
+
 .home--image_text {
-    background-color:hsl(182, 73%, 37%);
+    background-color: hsl(182, 73%, 37%);
     color: black;
     display: inline-block;
     height: 200px;
-    width: 300px;
-    margin-top: 50px;
-    padding: 20px;
+    width: 275px;
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     border: solid 1px cadetblue;
-    border-radius: 40px;
+    border-radius: 25px;
+    position: absolute;
+    left: 50px;
+}
+
+.home--image_text:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+}
+
+.home--images_text {
+    background-color: hsl(182, 73%, 37%);
+    color: black;
+    display: inline-block;
+    height: 200px;
+    width: 275px;
+    margin-top: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border: solid 1px cadetblue;
+    border-radius: 25px;
+    position: absolute;
+    left: 50px;
+
+}
+
+.home--images_text:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
 }
 
 .home--image button {
@@ -114,52 +186,12 @@ body {
     width: 20%;
 }
 
+.course-card:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+}
+
 .course-card img {
-    border-radius: 20px;
-    width: 100%;
-}
-
-.course-card2 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-
-.course-card2 img {
-    border-radius: 20px;
-    width: 100%;
-}
-
-.course-card3 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-
-.course-card3 img {
-    border-radius: 20px;
-    width: 100%;
-}
-
-.course-card4 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-
-.course-card4 img {
     border-radius: 20px;
     width: 100%;
 }
@@ -183,7 +215,8 @@ body {
     flex-basis: 25%;
 
 }
-.card-container{
+
+.card-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -191,7 +224,7 @@ body {
     margin-top: 10px;
 }
 
-.card10 {
+.card {
     padding-top: 15px;
     color: white;
     padding: 10px;
@@ -200,126 +233,49 @@ body {
     border-radius: 25px;
     width: 20%;
 }
-.card10 img {
+
+.card img {
     border-radius: 20px;
     width: 100%;
 }
-.card11 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
+
+.card:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
 }
-.card11 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.card12 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-.card12 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.card13 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-.card13 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.card14 {
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-.card14 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.card15{
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-.card15 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.card16{
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-.card16 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.card17{
-    padding-top: 15px;
-    color: white;
-    padding: 10px;
-    background-color: rgb(137, 45, 225);
-    border: solid rgb(137, 45, 225) 1px;
-    border-radius: 25px;
-    width: 20%;
-}
-.card17 img {
-    border-radius: 20px;
-    width: 100%;
-}
-.row2{
+
+
+.row2 {
     display: flex;
     gap: 10px;
     justify-content: space-between;
     margin-top: 25px;
 }
-.body{
+
+.body {
     background-color: cornflowerblue;
 }
-P::first-letter{text-transform: uppercase;}
-.footer_section{
+
+P::first-letter {
+    text-transform: uppercase;
+}
+
+.footer_section {
     background-color: black;
     color: white;
 }
-.footer-container{
+
+.footer-container {
     display: flex;
     padding: 20px;
     gap: 40px;
     margin: 08px;
 
 }
-.footer_section-two{
+
+.footer_section-two {
     display: flex;
     justify-content: space-between;
     padding-left: 28px;
     padding-right: 10px;
 }
-
