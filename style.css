@@ -76,16 +76,14 @@ body {
     right: 145px;
     box-shadow: rgb(137, 45, 225) 0 4px 4px;
     display: none;
+    transition: 0.3s;
 
 }
 
 .mylearning:hover {
     .mylearning__popup {
         display: block;
-        transition: 0.3s;
     }
-
-
 }
 
 
@@ -98,14 +96,23 @@ body {
 }
 
 .categories p {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(137, 45, 225);
     color: white;
     border: solid rgb(137, 45, 225) 1px;
     border-radius: 25px;
     padding: 05px;
+    transition:transform 0.3s ease;
 
 }
 
+.categories p:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
 
 .home--image {
     display: flex;
@@ -131,6 +138,20 @@ body {
     border-radius: 25px;
     position: absolute;
     left: 50px;
+    animation-name: zoom;
+    animation-duration: 2.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+@keyframes zoom {
+    0%{
+        transform:scale(0);
+        opacity:0
+    }
+    100%{transform: scale(1);
+    opacity: 1;}
+
+    
 }
 
 .home--image_text:hover {
@@ -152,7 +173,21 @@ body {
     border-radius: 25px;
     position: absolute;
     left: 50px;
+    animation-name: zoom;
+    animation-duration: 2.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 
+}
+@keyframes zoom {
+    0%{
+        transform:scale(0);
+        opacity:0
+    }
+    100%{transform: scale(1);
+    opacity: 1;}
+
+    
 }
 
 .home--images_text:hover {
